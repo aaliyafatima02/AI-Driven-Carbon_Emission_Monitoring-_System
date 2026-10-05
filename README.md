@@ -1,203 +1,145 @@
 # AI-Driven Carbon Emission Monitoring System
 
-## Overview
+## Project Overview
+
+The **AI-Driven Carbon Emission Monitoring System** is a Data Structures and Algorithms-II project designed to represent, analyze, and optimize a carbon-emission monitoring network.
+
+The system models emission sources and monitoring locations as vertices of a weighted graph. Different graph algorithms are used to analyze connectivity, minimum-cost network construction, and shortest paths. Dynamic Programming and the 0/1 Knapsack algorithm are used for budget-based emission-reduction optimization.
+
+## Objectives
+
+- Represent carbon-emission sources and monitoring locations using a graph.
+- Analyze connectivity using DFS and BFS.
+- Identify independent monitoring regions using Connected Components.
+- Construct a minimum-cost monitoring network using Prim's MST.
+- Find minimum-cost paths using Dijkstra's algorithm.
+- Optimize emission-reduction activities under a limited budget using Dynamic Programming and 0/1 Knapsack.
+- Demonstrate the practical application of DSA-II concepts to a carbon-emission monitoring problem.
+
+## Technologies Used
+
+- Programming Language: C
+- Data Structures: Graph, Adjacency Matrix, Arrays
+- Algorithms: DFS, BFS, Connected Components, Prim's MST, Dijkstra, Dynamic Programming, 0/1 Knapsack
+- Compiler: GCC
+- Development Environment: Visual Studio Code
 
-The **AI-Driven Carbon Emission Monitoring System** is a software project designed to organize, monitor, and analyse carbon-emission information from different sources such as vehicles, electricity consumption, industrial activities, machinery, and other operational processes.
+## Project Structure
+
+```text
+AI-Driven-Carbon_Emission_Monitoring_System/
+│
+├── data/
+│   └── emission_data.txt
+│
+├── results/
+│   └── sample_output.txt
+│
+├── screenshots/
+│
+├── src/
+│   ├── graph.c
+│   ├── graph.h
+│   ├── main.c
+│   ├── mst.c
+│   ├── optimization.c
+│   ├── shortest_path.c
+│   └── traversal.c
+│
+├── .gitignore
+└── README.md
 
-The project combines **Data Structures and Algorithms (DSA)** with intelligent analysis to make emission-related information easier to store, search, analyse, and prioritize.
+## DSA Concepts Implemented
 
-The system is designed as a foundation for developing an intelligent solution that can help users understand emission data and identify areas that may require attention.
+| Algorithm / Concept  | Application                                           |
+| -------------------- | ----------------------------------------------------- |
+| Graph Representation | Represents emission sources and monitoring locations  |
+| DFS                  | Traverses reachable monitoring locations              |
+| BFS                  | Performs level-by-level connectivity analysis         |
+| Connected Components | Identifies separate monitoring regions                |
+| Prim's MST           | Builds a minimum-cost monitoring network              |
+| Dijkstra             | Finds minimum-cost paths between locations            |
+| Dynamic Programming  | Solves the budget-based optimization problem          |
+| 0/1 Knapsack         | Selects emission-reduction activities within a budget |
 
----
+## Sample Dataset
 
-## Problem Statement
+The current implementation uses a sample dataset containing:
 
-Carbon emissions can be generated from multiple sources and activities. As the amount of emission-related data increases, manually collecting, organizing, comparing, and monitoring the information can become difficult and time-consuming.
+6 monitoring locations
+9 weighted connections
+Emission values for each location
+5 emission-reduction activities
 
-Different emission sources may also be associated with different locations, activities, categories, and time periods. A structured and intelligent system is therefore needed to organize this information and support efficient monitoring and analysis.
+The sample data is stored in:
+data/emission_data.txt
+The dataset is used for testing and demonstrating the implemented algorithms. Real-world carbon-emission data can be integrated in future development.
 
----
+## Implementation Results
 
-## Proposed Solution
+The implemented system was tested successfully using the sample dataset.
 
-The system provides a structured approach for managing carbon-emission records and analysing them using suitable data structures and algorithms.
+## Graph Traversal
 
-The proposed approach includes:
+DFS and BFS were executed from Industrial Area and successfully traversed all six monitoring locations.
 
-- Organizing emission records in a structured format.
-- Searching and retrieving relevant emission information.
-- Representing relationships between different emission-related entities.
-- Prioritizing sources with higher emission values.
-- Analysing emission patterns and trends.
-- Using AI-assisted analysis as a future extension of the system.
+## Connected Components
 
----
+The current sample network contains 1 connected component containing all six locations.
 
-## Key Features
+## Prim's Minimum Spanning Tree
+Prim's algorithm generated a minimum-cost monitoring network with a total connection cost of:
+14
 
-- Structured management of carbon-emission records.
-- Monitoring of emission information from different sources.
-- Efficient organization and retrieval of records.
-- Relationship modelling between emission-related entities.
-- Identification and prioritization of high-emission sources.
-- Analysis of emission patterns and trends.
-- Scope for future AI-assisted insights.
+## Dijkstra's Shortest Path
+Dijkstra's algorithm was executed from Industrial Area and calculated the minimum costs to the other monitoring locations.
+| Location         | Minimum Cost |
+| ---------------- | -----------: |
+| Industrial Area  |            0 |
+| Power Plant      |            4 |
+| Residential Area |            3 |
+| Commercial Zone  |            7 |
+| Transport Hub    |            9 |
+| Green Zone       |           12 |
+## 0/1 Knapsack Optimization
 
----
+For a budget of 75, the system selected the following emission-reduction activities:
 
-## Data Considered
+Activity 5 — Cost: 25, Reduction: 30
+Activity 4 — Cost: 50, Reduction: 70
 
-The system may contain information such as:
+Maximum expected emission reduction: 100
 
-- **Record ID**
-- **Source Type**
-- **Location**
-- **Activity**
-- **Energy/Fuel Usage**
-- **Emission Value**
-- **Timestamp**
-- **Category**
-- **Monitoring Status**
+## How to Compile
 
-This information provides the basic structure for organizing and analysing emission records.
+From the project root directory, run:
+gcc src/main.c src/graph.c src/traversal.c src/mst.c src/shortest_path.c src/optimization.c -o carbon_monitor
 
----
+## How to Run
+On Windows:
+.\carbon_monitor.exe
 
-## Data Structures and Algorithms
+To save the output:
 
-The project explores the use of suitable DSA concepts for different operations.
+.\carbon_monitor.exe > results\sample_output.txt
 
-| Data Structure / Algorithm | Purpose |
-|---|---|
-| **Trees** | Organizing emission information hierarchically |
-| **Tree Traversal** | Systematic processing of tree-based records |
-| **Max Heap** | Prioritizing higher-emission sources |
-| **Graphs** | Representing relationships between different entities |
-| **Adjacency List** | Representing graph connections efficiently |
-| **BFS** | Exploring connected entities level by level |
-| **DFS** | Exploring connected entities through depth-based traversal |
+## Future Scope
+-Integration of real-time carbon-emission data.
+-Integration of AI/ML-based emission prediction.
+-Dynamic monitoring of emission levels.
+-Visualization of the monitoring network.
+-Expansion of optimization features.
+-Integration with real environmental monitoring systems.
 
-The selection of each data structure depends on the type of operation required within the system.
+## Project Status
 
----
+Month 2 Implementation Completed
 
-## System Workflow
+The selected DSA-II concepts have been implemented and tested using a sample carbon-emission dataset. Further work will focus on integration, testing, documentation, visualization, and final demonstration.
 
-**Emission Data → Data Organization → DSA-Based Processing → Monitoring & Analysis → High-Emission Identification → Results & Insights → AI-Assisted Analysis**
+## Author
 
-### How It Works
+Aaliya Fatima
+B.Tech CSE
+Data Structures and Algorithms-II
 
-1. Emission-related information is collected or entered into the system.
-2. The information is organized into structured records.
-3. Suitable data structures are used according to the required operation.
-4. The records can be searched, processed, and analysed.
-5. High-emission sources can be prioritized for monitoring.
-6. Relationships between sources, activities, locations, and categories can be explored.
-7. AI-assisted analysis can be incorporated to identify patterns and generate further insights.
-
----
-
-## Graph-Based Relationship Model
-
-Graphs can be used to represent relationships between different entities involved in emission generation.
-
-For example:
-
-**Facility → Machine → Activity → Emission Category**
-
-Another possible relationship is:
-
-**Transport Source → Route → Activity → Emission Record**
-
-An **Adjacency List** can be used to store these relationships efficiently, while **BFS** and **DFS** can be used to explore connected entities.
-
----
-
-## AI-Assisted Analysis
-
-AI is an important part of the planned direction of the project.
-
-AI-assisted analysis may be used to:
-
-- Identify unusual emission patterns.
-- Detect recurring patterns.
-- Analyse emission trends.
-- Generate useful insights from collected data.
-- Support intelligent monitoring and decision-making.
-
-AI integration is considered a future development area and is not represented as completed functionality at the current stage.
-
----
-
-## Intended Users
-
-The proposed system may be useful for:
-
-- Organizations and facility managers
-- Sustainability teams
-- Environmental analysts
-- Operations managers
-- Administrators
-- Users responsible for monitoring emission-related information
-
----
-
-## Current Project Status
-
-**Initial Development / Conceptual Stage**
-
-The current stage focuses on understanding the problem, defining the system requirements, studying relevant DSA concepts, and designing how these concepts can be applied to carbon-emission monitoring.
-
-Further implementation, testing, performance evaluation, and AI integration will be carried out as the project progresses.
-
----
-
-## Development Plan
-
-1. Problem and requirement analysis
-2. System design
-3. Data organization and record management
-4. Implementation of relevant DSA concepts
-5. Searching, monitoring, and prioritization
-6. Testing and performance evaluation
-7. AI-assisted analysis and further improvements
-
----
-
-## Future Enhancements
-
-The system can be extended with:
-
-- Real-time emission monitoring.
-- Additional emission data sources.
-- Advanced AI-based analysis.
-- Interactive dashboards and visualizations.
-- Improved pattern and trend detection.
-- Automated alerts for significant emission levels.
-- Enhanced reporting and insights.
-
----
-
-## Project Documentation
-
-Detailed documentation of the project is available in this repository.
-
-[View Project Documentation](./AI%20Driven%20Carbon%20Emission%20Monitoring%20System%20Documentation.docx)
-
----
-
-## Project Scope
-
-The project focuses on developing a structured approach to carbon-emission monitoring by combining data organization, Data Structures and Algorithms, and intelligent analysis.
-
-The system is intended to progress from its current conceptual stage toward implementation, testing, evaluation, and further AI-assisted capabilities.
-
----
-
-## Conclusion
-
-The **AI-Driven Carbon Emission Monitoring System** provides a structured approach to organizing and monitoring carbon-emission information from different sources.
-
-By applying appropriate **Data Structures and Algorithms** and establishing a foundation for **AI-assisted analysis**, the project aims to make emission-related information easier to manage, analyse, and monitor.
-
-The system can be further developed with real-time monitoring, advanced analysis, visualization, and intelligent insights as future enhancements.

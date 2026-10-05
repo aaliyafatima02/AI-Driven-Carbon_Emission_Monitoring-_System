@@ -1,0 +1,31 @@
+# AI-Driven Carbon Emission Monitoring System
+# Sample Dataset
+
+LOCATIONS
+6
+0|Industrial Area|82.5
+1|Power Plant|95.2
+2|Residential Area|48.7
+3|Commercial Zone|67.4
+4|Transport Hub|73.8
+5|Green Zone|25.6
+
+EDGES
+9
+0|1|4
+0|2|3
+1|2|2
+1|3|5
+2|3|4
+2|4|6
+3|4|2
+3|5|7
+4|5|3
+
+ACTIVITIES
+5
+20|25
+30|40
+40|50
+50|70
+25|30
