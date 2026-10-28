@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarbonIQ — Carbon Emission Monitoring and Reduction Planning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- ================================================================= -->
+    <!-- PRIMARY NAVIGATION SIDEBAR                                        -->
+    <!-- ================================================================= -->
+    <aside class="sidebar">
+      <div class="brand-header">
+        <div class="brand-badge">Environmental Analytics</div>
+        <div class="brand-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+          CarbonIQ
+        </div>
+        <div class="brand-subtitle">Carbon Emission Monitoring</div>
+      </div>
+
+      <ul class="nav-menu">
+        <li>
+          <a href="#dashboard" class="nav-link active" data-target="dashboard">
+            <svg class="nav-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="#monitoring" class="nav-link" data-target="monitoring">
+            <svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+            Emission Monitoring
+          </a>
+        </li>
+        <li>
+          <a href="#network" class="nav-link" data-target="network">
+            <svg class="nav-icon" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M8.5 7.5l7 7M8.5 16.5l7-7"/></svg>
+            Monitoring Network
+          </a>
+        </li>
+        <li>
+          <a href="#reduction" class="nav-link" data-target="reduction">
+            <svg class="nav-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            Reduction Planner
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="nav-link" data-target="about">
+            <svg class="nav-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            About
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div>CarbonIQ Platform v2.4</div>
+        <div class="system-badge">Regional Analytics Edition</div>
+        <div style="margin-top: 0.35rem; color: #475569;">Recorded Dataset Active</div>
+      </div>
+    </aside>
+
+    <!-- ================================================================= -->
+    <!-- MAIN APPLICATION VIEWPORT                                         -->
+    <!-- ================================================================= -->
+    <main class="main-content">
+      
+      <!-- Top Enterprise Header -->
+      <header class="top-header">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="header-titles">
+            <h1>CarbonIQ</h1>
+            <div class="header-meta">
+              <span>Carbon Emission Monitoring and Reduction Planning</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-status-pill">
+          <span class="pulse-dot"></span>
+          <span>Recorded Dataset &bull; 6 Locations &bull; 9 Corridors</span>
+        </div>
+      </header>
+
+      <!-- Main Body Container -->
+      <div class="content-body">
+
+        <!-- ============================================================= -->
+        <!-- 1. DASHBOARD                                                  -->
+        <!-- ============================================================= -->
+        <section id="dashboard" class="section-panel active">
+          <div class="section-header">
+            <span class="section-tag">Executive Summary</span>
+            <h2 class="section-title">Environmental Dashboard</h2>
+            <p class="section-desc">
+              Consolidated situational awareness across the 6 regional carbon monitoring sectors. Provides baseline footprint summaries, hotspot tracking, and quick access to network analysis and reduction planning.
+            </p>
+          </div>
+
+          <!-- KPI Cards Grid -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">
+                <span>Total Recorded Emissions</span>
+                <span class="badge-pill badge-info">Regional Load</span>
+              </div>
+              <div class="kpi-value-row">
+                <span id="kpi-total-emission" class="kpi-value">393.20</span>
+                <span class="kpi-unit">units</span>
+              </div>
+              <div class="kpi-subtext">Sum of all 6 monitored regional sectors</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">
+                <span>Peak Emission Hotspot</span>
+                <span class="badge-pill badge-danger">High Severity</span>
+              </div>
+              <div class="kpi-value-row">
+                <span id="kpi-highest-location" class="kpi-value" style="font-size: 1.45rem;">Power Plant (95.20)</span>
+              </div>
+              <div class="kpi-subtext">24.2% of total regional output</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">
+                <span>Lowest Emission Sector</span>
+                <span class="badge-pill badge-success">Clean Anchor</span>
+              </div>
+              <div class="kpi-value-row">
+                <span id="kpi-lowest-location" class="kpi-value" style="font-size: 1.45rem;">Green Zone (25.60)</span>
+              </div>
+              <div class="kpi-subtext">6.5% of total regional output</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-label">
+                <span>Monitoring Network Density</span>
+                <span class="badge-pill badge-info">Grid Coverage</span>
+              </div>
+              <div class="kpi-value-row">
+                <span id="kpi-grid-density" class="kpi-value" style="font-size: 1.55rem;">6 Locations / 9 Corridors</span>
+              </div>
+              <div class="kpi-subtext">Average: 65.53 units per sector</div>
+            </div>
+          </div>
+
+          <!-- 2-Column Grid: Distribution Chart & Priority Hotspots -->
+          <div class="grid-2col">
+            <!-- Chart Card -->
+            <div class="card">
+              <div class="card-title-bar">
+                <div class="card-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  Regional Emission Distribution
+                </div>
+                <span class="badge-pill badge-info">Comparative Output</span>
+              </div>
+
+              <p class="section-desc" style="margin-bottom: 1rem; font-size: 0.8rem;">
+                Recorded output relative to critical threshold (80.00 units). Red indicates priority intervention targets.
+              </p>
+
+              <div id="dashboard-bar-chart" class="chart-container">
+                <!-- Bar chart populated dynamically -->
+              </div>
+            </div>
+
+            <!-- Hotspot Summary Card -->
+            <div class="card">
+              <div class="card-title-bar">
+                <div class="card-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  Priority Abatement Sectors
+                </div>
+                <span class="badge-pill badge-danger">High Impact</span>
+              </div>
+
+              <div class="hotspot-card-grid">
+                <div class="hotspot-card critical">
+                  <div class="hotspot-header">
+                    <div>
+                      <div class="hotspot-title">Power Plant</div>
+                      <span class="badge-pill badge-danger">Energy Generation</span>
+                    </div>
+                    <div class="hotspot-val">95.20 u</div>
+                  </div>
+                  <p class="section-desc" style="font-size: 0.78rem; margin: 0;">
+                    Generates 24.2% of regional emissions. Primary candidate for combined heat and power integration.
+                  </p>
+                </div>
+
+                <div class="hotspot-card critical">
+                  <div class="hotspot-header">
+                    <div>
+                      <div class="hotspot-title">Industrial Area</div>
+                      <span class="badge-pill badge-danger">Manufacturing</span>
+                    </div>
+                    <div class="hotspot-val">82.50 u</div>
+                  </div>
+                  <p class="section-desc" style="font-size: 0.78rem; margin: 0;">
+                    Generates 21.0% of regional emissions. Heavy manufacturing exhaust requires catalytic scrubbers.
+                  </p>
+                </div>
+
+                <div class="hotspot-card high">
+                  <div class="hotspot-header">
+                    <div>
+                      <div class="hotspot-title">Transport Hub</div>
+                      <span class="badge-pill badge-warning">Logistics & Mobility</span>
+                    </div>
+                    <div class="hotspot-val">73.80 u</div>
+                  </div>
+                  <p class="section-desc" style="font-size: 0.78rem; margin: 0;">
+                    Generates 18.8% of regional emissions. High-density commercial freight terminal.
+                  </p>
+                </div>
+              </div>
+
+              <div class="notice-box" style="margin-top: 1rem; margin-bottom: 0;">
+                The top three emission hotspots account for <strong>64.0%</strong> (251.50 units) of total regional carbon emissions.
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Navigation Action Cards -->
+          <div class="action-card-grid">
+            <a href="#monitoring" class="action-card" onclick="window.carbonApp.navigateTo('monitoring')">
+              <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+              <div>
+                <div class="action-card-title">Explore Emission Monitoring</div>
+                <div class="action-card-desc">Inspect all 6 monitored locations with interactive sorting, category filters, and detailed station profiles.</div>
+              </div>
+              <div class="action-card-link">Open Station Inventory &rarr;</div>
+            </a>
+
+            <a href="#network" class="action-card" onclick="window.carbonApp.navigateTo('network')">
+              <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M8.5 7.5l7 7M8.5 16.5l7-7"/></svg>
+              <div>
+                <div class="action-card-title">Analyze Monitoring Network</div>
+                <div class="action-card-desc">View interactive spatial topologies, analyze transmission corridors, and compute optimal routing paths.</div>
+              </div>
+              <div class="action-card-link">View Network Topology &rarr;</div>
+            </a>
+
+            <a href="#reduction" class="action-card" onclick="window.carbonApp.navigateTo('reduction')">
+              <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <div>
+                <div class="action-card-title">Plan Emission Reductions</div>
+                <div class="action-card-desc">Simulate capital budgets and determine the optimal combination of abatement interventions.</div>
+              </div>
+              <div class="action-card-link">Launch Reduction Planner &rarr;</div>
+            </a>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 2. EMISSION MONITORING                                        -->
+        <!-- ============================================================= -->
+        <section id="monitoring" class="section-panel">
+          <div class="section-header">
+            <span class="section-tag">Sector Inventory & Analytics</span>
+            <h2 class="section-title">Emission Monitoring</h2>
+            <p class="section-desc">
+              Inspect recorded carbon emissions across all 6 regional stations. Filter by sector category, sort by environmental output, and click any row to review comprehensive station profiles.
+            </p>
+          </div>
+
+          <!-- Filter & Sorting Toolbar -->
+          <div class="filter-toolbar">
+            <div class="filter-group">
+              <span class="filter-label">Sort By:</span>
+              <select id="table-sort-select" class="form-select" style="min-width: 190px;">
+                <option value="emission-desc">Emission (High to Low)</option>
+                <option value="emission-asc">Emission (Low to High)</option>
+                <option value="name-asc">Location Name (A-Z)</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <span class="filter-label">Sector Filter:</span>
+              <select id="table-filter-select" class="form-select" style="min-width: 160px;">
+                <option value="all">All Sectors</option>
+                <option value="energy">Energy</option>
+                <option value="industrial">Industrial</option>
+                <option value="transport">Transport</option>
+                <option value="commercial">Commercial</option>
+                <option value="residential">Residential</option>
+                <option value="eco-reserve">Eco-Reserve</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Spacious Unclipped Table Card -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-title-bar">
+              <div class="card-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                Regional Stations Inventory
+              </div>
+              <span class="badge-pill badge-info">6 Monitored Locations</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th style="width: 60px;">Rank</th>
+                    <th style="min-width: 170px;">Location Name</th>
+                    <th style="width: 120px;">Sector Category</th>
+                    <th style="width: 130px;">Recorded Output</th>
+                    <th style="width: 80px;">Share (%)</th>
+                    <th style="min-width: 140px;">Emission Ratio Bar</th>
+                    <th style="width: 150px;">Environmental Risk</th>
+                  </tr>
+                </thead>
+                <tbody id="monitoring-table-body">
+                  <!-- Populated dynamically via app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Station Detail Inspector Card -->
+          <div class="card">
+            <div class="card-title-bar">
+              <div class="card-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Station Profile & Corridors: <span id="station-detail-title" style="color: #38bdf8; margin-left: 0.35rem;">Industrial Area</span>
+              </div>
+              <span id="station-detail-type" class="badge-pill badge-info">Industrial</span>
+            </div>
+
+            <div class="grid-2col" style="margin-bottom: 0;">
+              <div>
+                <div class="inspector-stat-row">
+                  <span class="inspector-stat-label">Recorded Emission Output:</span>
+                  <span id="station-detail-emission" class="inspector-stat-val">82.50 units</span>
+                </div>
+                <div class="inspector-stat-row">
+                  <span class="inspector-stat-label">Regional Carbon Contribution:</span>
+                  <span id="station-detail-share" class="inspector-stat-val">21.0% of regional total</span>
+                </div>
+                <div class="inspector-stat-row">
+                  <span class="inspector-stat-label">Telemetry Status:</span>
+                  <span class="inspector-stat-val" style="color: var(--accent-emerald);">Active Baseline Connection</span>
+                </div>
+              </div>
+
+              <div>
+                <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                  Direct Inter-Zone Transmission Corridors:
+                </div>
+                <div id="station-detail-connections">
+                  <!-- Populated dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 3. MONITORING NETWORK                                         -->
+        <!-- ============================================================= -->
+        <section id="network" class="section-panel">
+          <div class="section-header">
+            <span class="section-tag">Spatial Topology & Infrastructure</span>
+            <h2 class="section-title">Monitoring Network</h2>
+            <p class="section-desc">
+              Interactive spatial representation of regional monitoring locations and transmission corridors. Explore network routing, evaluate optimal telemetry backbones, and verify inter-zone reachability.
+            </p>
+          </div>
+
+          <!-- Controls Bar -->
+          <div class="graph-controls-bar">
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary);">Topology View:</span>
+            <button id="btn-mode-full" class="btn active">Full Topology (9 Corridors)</button>
+            <button id="btn-mode-mst" class="btn">Optimal Telemetry Backbone (5 Links, Cost 14)</button>
+          </div>
+
+          <!-- Network Layout Grid -->
+          <div class="network-card-content">
+            <!-- SVG Canvas -->
+            <div class="graph-canvas-wrapper">
+              <svg id="network-svg" class="graph-svg" viewBox="0 0 820 540" preserveAspectRatio="xMidYMid meet">
+                <!-- Rendered dynamically via app.js -->
+              </svg>
+            </div>
+
+            <!-- Inspector Panel -->
+            <div class="inspector-panel">
+              <div class="inspector-header">
+                <div id="inspector-name" class="inspector-title">Industrial Area</div>
+                <div id="inspector-id" class="inspector-subtitle">Zone ID: #0</div>
+              </div>
+
+              <div>
+                <div class="inspector-stat-row">
+                  <span class="inspector-stat-label">Emission Output:</span>
+                  <span id="inspector-emission" class="inspector-stat-val">82.50 units</span>
+                </div>
+                <div class="inspector-stat-row">
+                  <span class="inspector-stat-label">Sector Category:</span>
+                  <span id="inspector-type" class="inspector-stat-val">Industrial</span>
+                </div>
+              </div>
+
+              <div>
+                <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                  Inter-Zone Corridors:
+                </div>
+                <div id="inspector-links">
+                  <!-- Neighbor links populated dynamically -->
+                </div>
+              </div>
+
+              <div class="notice-box" style="margin: 0; font-size: 0.75rem;">
+                <strong>Corridor Cost Metrics:</strong>
+                Edge weights represent transmission and infrastructure laying costs between regional monitoring stations.
+              </div>
+            </div>
+          </div>
+
+          <!-- Network Analysis Tools Card -->
+          <div class="analysis-toolbar">
+            <div class="card-title" style="margin-bottom: 1rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Network Analysis & Route Optimization Suite
+            </div>
+
+            <div class="analysis-controls-grid">
+              <div class="form-group">
+                <label class="form-label" for="analysis-tool-select">Analysis Capability</label>
+                <select id="analysis-tool-select" class="form-select">
+                  <option value="routing">Corridor Route Optimization (Shortest Path)</option>
+                  <option value="connectivity">Network Reachability &amp; Connectivity Audit</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="analysis-source">Origin Station</label>
+                <select id="analysis-source" class="form-select">
+                  <!-- Populated via app.js -->
+                </select>
+              </div>
+
+              <div class="form-group" id="analysis-target-group">
+                <label class="form-label" for="analysis-target">Destination Station</label>
+                <select id="analysis-target" class="form-select">
+                  <!-- Populated via app.js -->
+                </select>
+              </div>
+
+              <button id="btn-run-analysis" class="btn btn-primary" style="height: 42px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Run Analysis
+              </button>
+            </div>
+
+            <pre id="analysis-log-output" class="analysis-log-box"></pre>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 4. REDUCTION PLANNER                                          -->
+        <!-- ============================================================= -->
+        <section id="reduction" class="section-panel">
+          <div class="section-header">
+            <span class="section-tag">Capital Allocation Simulator</span>
+            <h2 class="section-title">Emission Reduction Planner</h2>
+            <p class="section-desc">
+              Simulate and optimize capital allocation across candidate carbon reduction interventions. Evaluates non-divisible abatement projects to maximize net emission reduction within a specified investment budget.
+            </p>
+          </div>
+
+          <!-- Hero Optimization Bar -->
+          <div class="knapsack-hero">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span class="section-tag">Interactive Capital Budget</span>
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff;">Target Abatement Investment</h3>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);">
+                Default Benchmark Target: <strong>75 units</strong>
+              </div>
+            </div>
+
+            <!-- Preset Buttons -->
+            <div class="preset-pills">
+              <span style="font-size: 0.75rem; color: var(--text-muted); align-self: center; margin-right: 0.25rem;">Quick Presets:</span>
+              <button class="preset-btn" data-budget="50">50 units (Pilot Tier)</button>
+              <button class="preset-btn active" data-budget="75">75 units (Benchmark Target)</button>
+              <button class="preset-btn" data-budget="100">100 units (Expanded Tier)</button>
+              <button class="preset-btn" data-budget="145">145 units (Comprehensive)</button>
+            </div>
+
+            <div class="budget-control-bar">
+              <input type="range" id="budget-slider" class="slider-range" min="0" max="165" step="5" value="75">
+              <input type="number" id="budget-input" class="form-input mono" min="0" max="165" value="75" style="text-align: center; font-size: 1.15rem; font-weight: 700;">
+            </div>
+
+            <!-- Dynamic KPIs -->
+            <div class="impact-comparison-grid">
+              <div class="impact-metric-box">
+                <div class="impact-metric-title">Budget Allocated</div>
+                <div id="knapsack-used-budget" class="impact-metric-value" style="color: var(--accent-blue);">75 units</div>
+              </div>
+
+              <div class="impact-metric-box">
+                <div class="impact-metric-title">Budget Remaining</div>
+                <div id="knapsack-remaining-budget" class="impact-metric-value" style="color: var(--text-secondary);">0 units</div>
+              </div>
+
+              <div class="impact-metric-box">
+                <div class="impact-metric-title">Max Emission Reduction</div>
+                <div id="knapsack-reduction" class="impact-metric-value" style="color: var(--accent-emerald);">100 units</div>
+              </div>
+
+              <div class="impact-metric-box">
+                <div class="impact-metric-title">Estimated Post-Reduction Output</div>
+                <div id="knapsack-net-emissions" class="impact-metric-value" style="color: #38bdf8;">293.20 units</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidates Inventory Table -->
+          <div class="card">
+            <div class="card-title-bar">
+              <div class="card-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Candidate Interventions &amp; Selection Status
+              </div>
+              <span class="badge-pill badge-info">5 Candidate Interventions</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th style="width: 60px;">ID</th>
+                    <th style="min-width: 220px;">Intervention Description</th>
+                    <th style="width: 110px;">Sector</th>
+                    <th style="width: 90px;">Cost (C<sub>i</sub>)</th>
+                    <th style="width: 110px;">Reduction (R<sub>i</sub>)</th>
+                    <th style="width: 100px;">Ratio (R<sub>i</sub> / C<sub>i</sub>)</th>
+                    <th style="width: 130px;">Planner Status</th>
+                  </tr>
+                </thead>
+                <tbody id="knapsack-table-body">
+                  <!-- Populated dynamically via app.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="notice-box" style="margin-top: 1.25rem; margin-bottom: 0;">
+              <strong>Optimization Methodology:</strong>
+              Uses combinatorial mathematical programming (0/1 Knapsack formulation) to find the mathematically optimal combination of discrete capital investments, maximizing total carbon abatement without exceeding the allocated budget.
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 5. ABOUT                                                      -->
+        <!-- ============================================================= -->
+        <section id="about" class="section-panel">
+          <div class="section-header">
+            <span class="section-tag">Platform Overview &amp; Architecture</span>
+            <h2 class="section-title">About CarbonIQ</h2>
+            <p class="section-desc">
+              CarbonIQ is an environmental intelligence and decision-support platform designed to monitor carbon emissions and model optimal reduction pathways for regional infrastructure planning.
+            </p>
+          </div>
+
+          <div class="about-hero">
+            <div class="brand-badge" style="margin-bottom: 0.75rem;">Platform Mission</div>
+            <h3 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 0.75rem; font-weight: 700;">
+              Empowering Regional Decarbonization with Quantitative Analytics
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+              Managing carbon footprints across complex economic sectors requires more than raw data tracking—it demands systematic analysis of spatial relationships, corridor infrastructure costs, and capital-efficient abatement investments.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              CarbonIQ provides environmental planners, facility managers, and sustainability teams with clear situational awareness of their emissions inventory and deterministic decision models to plan capital-effective reduction programs.
+            </p>
+          </div>
+
+          <div class="about-feature-grid">
+            <div class="about-feature-card">
+              <div class="about-feature-title">
+                Spatial Graph Topology
+              </div>
+              <p class="about-feature-desc">
+                Monitored sectors are modeled as continuous emission vertices connected by weighted corridors representing sensor telemetry links, transport corridors, and infrastructure conduits. This enables spatial route optimization and minimum-cost telemetry backbone design.
+              </p>
+            </div>
+
+            <div class="about-feature-card">
+              <div class="about-feature-title">
+                Combinatorial Abatement Optimization
+              </div>
+              <p class="about-feature-desc">
+                Rather than relying on heuristic guesswork, CarbonIQ employs dynamic programming models to select the most cost-effective portfolio of non-divisible decarbonization interventions within any capital budget ceiling.
+              </p>
+            </div>
+
+            <div class="about-feature-card">
+              <div class="about-feature-title">
+                Zero-Dependency Architecture
+              </div>
+              <p class="about-feature-desc">
+                Built with modern web standards (HTML5, CSS3, vanilla ES6+ JavaScript), CarbonIQ operates entirely client-side with zero external library bloat. It provides immediate responsiveness, maximum security, and full offline accessibility.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid-2col">
+            <div class="card">
+              <div class="card-title">
+                Dataset &amp; Operational Transparency
+              </div>
+              <div style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6;">
+                <p style="margin-bottom: 0.75rem;">
+                  Current platform analytics operate on a verified baseline dataset covering six economic sectors (Power Plant, Industrial Area, Transport Hub, Commercial Zone, Residential Area, and Green Zone) and five candidate engineering interventions.
+                </p>
+                <p>
+                  The platform does not claim real-time continuous IoT hardware streaming or trained machine-learning predictions at this stage. It is designed as an algorithmic decision-support framework that can be connected to live sensor networks in future phases.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">
+                System Specifications
+              </div>
+              <div style="margin-top: 1rem;">
+                <div class="inspector-stat-row">
+                  <span class="inspector-stat-label">Platform Core:</span>
+                  <span class="inspector-stat-val">CarbonIQ Analytics Engine</span>
+                </div>
+                <div class="inspector-stat-row">
+                  <span class="inspector-stat-label">Runtime Environment:</span>
+                  <span class="inspector-stat-val">Client-Side Modern Browser</span>
+                </div>
+                <div class="inspector-stat-row">
+                  <span class="inspector-stat-label">Data Repository:</span>
+                  <span class="inspector-stat-val">Verified Baseline Dataset (6 Zones)</span>
+                </div>
+                <div class="inspector-stat-row">
+                  <span class="inspector-stat-label">Build Architecture:</span>
+                  <span class="inspector-stat-val">Zero External Dependencies</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
